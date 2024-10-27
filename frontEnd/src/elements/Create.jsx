@@ -112,7 +112,7 @@ function Create() {
               <button type="submit" className="btn btn-success w-100">
                 Cadastrar
               </button>
-              <a href="/viewall" className="btn btn-success w-100 my-2">Buscar</a>
+              <a href="/viewall" className="btn btn-success w-100 my-2">vizualizar veiculos cadastrados</a>
             </div>
           </form>
         </div>
