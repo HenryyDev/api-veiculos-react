@@ -75,7 +75,11 @@ const ViewAll = () => {
 }
 else{
   return(
-  <h1>Nenhum veiculo encontrado</h1>);
+ <div>
+   <h1>Nenhum veiculo encontrado</h1>
+   <a href="/" className="btn btn-success">cadastrar veiculo</a>
+ </div> );
+  
 };
 }
 
