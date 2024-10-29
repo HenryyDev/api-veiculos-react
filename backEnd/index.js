@@ -35,15 +35,17 @@ app.delete('/remover/:id', function(req,res){
 
 //editar por id
  app.put('/editar/:id', function(req,res){
-    let id=req.params
-    let marca=req.body.marca;
-    let modelo=req.body.modelo;
-    let ano =req.body.ano;
-    let prop=req.body.proprietario;
-    let cor=req.body.cor;
+    const values=[
+        req.body.marca,
+        req.body.modelo,
+        req.body.ano,
+        req.body.proprietario,
+        req.body.cor,
+        req.body.id
+        ]
 
     const query = `UPDATE veiculos SET marca = ?, modelo = ?, ano = ?, proprietario = ?, cor = ? WHERE id = ?`;
-    const values = [marca, modelo, number(ano), prop, cor, id];
+   
     
     conexao.query(query, values, function (erro, retorno) {
         if (erro) throw erro

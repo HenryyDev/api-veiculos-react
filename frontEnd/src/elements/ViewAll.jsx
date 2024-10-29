@@ -4,8 +4,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import './css/Viewall.css'
+import { useNavigate } from 'react-router-dom';
+
 
 const ViewAll = () => {
+  const navigate=useNavigate()
   const [cars, setCars] = useState([]);
 
   useEffect(() => {
@@ -33,7 +36,12 @@ const ViewAll = () => {
       toast.error("Erro ao remover");
     }
   };
+ 
 
+    const handleClick= (id)=>{
+       navigate(`editar/${id}`)
+    }
+    if(cars.length>=1){
   return (
     <div>
       <ToastContainer />
@@ -52,7 +60,7 @@ const ViewAll = () => {
                     Dono: {car.proprietario} <br />
                     Cor: {car.cor}
                   </p>
-                  <a href="#" className="btn btn-success me-2">
+                  <a href="#" onClick={()=>handleClick(car.id)} className="btn btn-success me-2" >
                     Editar
                   </a>
                   <a href="#" className="btn btn-danger" onClick={() => rem(car.id)}>Remover</a>
@@ -64,6 +72,14 @@ const ViewAll = () => {
       </div>
     </div>
   );
+}
+else{
+  return(
+  <h1>Nenhum veiculo encontrado</h1>);
 };
+}
+
+
+
 
 export default ViewAll;
