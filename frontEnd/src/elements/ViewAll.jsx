@@ -75,9 +75,9 @@ const ViewAll = () => {
 }
 else{
   return(
- <div>
+ <div className=" d-flex flex-column justify-content-center" >
    <h1>Nenhum veiculo encontrado</h1>
-   <a href="/" className="btn btn-success">cadastrar veiculo</a>
+   <a href="/" className="btn btn-success " >cadastrar veiculo</a>
  </div> );
   
 };

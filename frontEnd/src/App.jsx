@@ -13,6 +13,7 @@ function App(){
       <Route path="/" element={<Create />} />
       <Route path="/viewall" element={<ViewAll />} />
       <Route path="/viewall/editar/:id" element={<Editar />} />
+      <Route path="/busca" element={<Busca />} />
 
       
      
