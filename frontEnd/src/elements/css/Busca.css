@@ -1,0 +1,41 @@
+/* Garante que o HTML, o Body e o root ocupem 100% da altura e largura */
+html, body, #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    gap: 20px;
+    padding: 0 !important;
+    max-width: 600px; /* Alterado para max-width para melhor responsividade */
+    width: 100%; /* Para ocupar 100% até o limite do max-width */
+}
+
+.cards {
+    padding: 20px !important;
+    margin: 0 !important;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background: #198754;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Alterado para que o conteúdo fique no topo */
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 80px; /* Adiciona padding no topo para evitar sobreposição com o header */
+}

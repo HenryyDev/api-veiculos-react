@@ -42,7 +42,14 @@ function Create() {
   return (
     <>
       <ToastContainer />
-      <div className="container d-flex justify-content-center align-items-center">
+      <header className=" text-white py-3" style={{ position: "fixed", width: "100vw", top: 0 }}>
+              <h1 className="text-center">Sistema de Gerenciamento de veiculos</h1>
+                <a href="/" className="btn ">Cadastrar</a>
+                <a href="/viewall"  className="btn">Ver Todos os veiculos</a>
+                <a href="/busca" className="btn">Buscar</a>
+            </header>
+
+      <div className="container d-flex justify-content-center align-items-center" >
         <div className="row">
           <h3 className="text-center my-2">Cadastro de veiculos</h3>
 
@@ -112,8 +119,7 @@ function Create() {
               <button type="submit" className="btn btn-success w-100">
                 Cadastrar
               </button>
-              <a href="/viewall" className="btn btn-success w-100 my-2">vizualizar veiculos cadastrados</a>
-              <a href="/busca" className="btn btn-success w-100">Buscar por ano, modelo ou cor</a>
+              
             </div>
           </form>
         </div>

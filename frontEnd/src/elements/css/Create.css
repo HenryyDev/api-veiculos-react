@@ -6,6 +6,7 @@ body{
 }
 
 .container{
+    margin-top: 150px !important;
     background-color: #cacaca;
     border-radius: 25px;
 }

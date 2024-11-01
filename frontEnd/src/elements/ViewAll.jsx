@@ -45,6 +45,12 @@ const ViewAll = () => {
   return (
     <div>
       <ToastContainer />
+      <header className=" text-white py-3" style={{ position: "fixed", width: "100vw", top: 0 }}>
+                <h1 className="text-center">Sistema de Gerenciamento de veiculos</h1>
+                <a href="/" className="btn ">Cadastrar</a>
+                <a href="/viewall"  className="btn">Ver Todos os veiculos</a>
+                <a href="/busca" className="btn">Buscar</a>
+            </header>
       <div className="container pb-4">
         <h1 className="text-center">Veículos Cadastrados</h1>
         <div className="row">

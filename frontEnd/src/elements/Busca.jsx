@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify"; 
 import "react-toastify/dist/ReactToastify.css"; 
 
+import "./css/Busca.css"
+
 const Busca = () => {
     const navigate = useNavigate(); 
     const [metodo, setMetodo] = useState("Escolha o método"); 
@@ -71,28 +73,38 @@ const Busca = () => {
     return (
         <>
             <ToastContainer /> 
-            <div className="input-group mb-3" style={{ width: "70vw", margin: "0 auto" }}>
-                <button className="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    {metodo} {/* Exibe o método de busca selecionado */}
-                </button>
-                <ul className="dropdown-menu">
-                    {/* Itens do menu para selecionar o método de busca */}
-                    <li><a className="dropdown-item" href="#" onClick={() => setMetodo("ano")}>ano</a></li>
-                    <li><a className="dropdown-item" href="#" onClick={() => setMetodo("id")}>id</a></li>
-                    <li><a className="dropdown-item" href="#" onClick={() => setMetodo("cor")}>cor</a></li>
-                </ul>
-                <input
-                    onKeyUp={tecla} // Detecta  tecla
-                    type="text"
-                    className="form-control"
-                    placeholder="Escolha o método de busca e digite" 
-                    value={busca} // Valor do campo de entrada
-                    required
-                    onChange={(e) => setBusca(e.target.value)} // Atualiza o estado de busca ao digitar
-                />
-                <button onClick={consulta} className="btn btn-outline-success">Buscar</button> {/* Btn para realizar a busca */}
-            </div>
-            <div className="container pb-4">
+            <header className=" text-white py-3" style={{ position: "fixed", width: "100vw", top: 0 }}>
+            <h1 className="text-center">Sistema de Gerenciamento de veiculos</h1>
+                <a href="/" className="btn ">Cadastrar</a>
+                <a href="/viewall"  className="btn">Ver Todos os veiculos</a>
+                <a href="/busca" className="btn">Buscar</a>
+            </header>
+            <main>
+
+            <div className=" container d-flex " style={{flexDirection:"column", alignItems:"center",justifyContent:"center",backgroundColor:"#cacaca"}}>
+                <div className="input-group my-2 px-4" >
+                    <button className="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {metodo} {/* Exibe o método de busca selecionado */}
+                    </button>
+                    <ul className="dropdown-menu">
+                        {/* Itens do menu para selecionar o método de busca */}
+                        <li><a className="dropdown-item" href="#" onClick={() => setMetodo("ano")}>ano</a></li>
+                        <li><a className="dropdown-item" href="#" onClick={() => setMetodo("id")}>id</a></li>
+                        <li><a className="dropdown-item" href="#" onClick={() => setMetodo("cor")}>cor</a></li>
+                    </ul>
+                    <input
+                        onKeyUp={tecla} // Detecta  tecla
+                        type="text"
+                        className="form-control"
+                        placeholder="Escolha o método de busca e digite"
+                        value={busca} // Valor do campo de entrada
+                        required
+                        onChange={(e) => setBusca(e.target.value)} // Atualiza o estado de busca ao digitar
+                    />
+                    <button onClick={consulta} className="btn btn-outline-success">Buscar</button> {/* Btn para realizar a busca */}
+                </div>
+           
+            <div className="container cards pb-4">
                 <h1 className="text-center">Busca de veículos</h1>
                 <div className="row justify-content-center">
                     {/* mensagem exibida enquanto nao buscar */}
@@ -103,7 +115,7 @@ const Busca = () => {
                             {/* Se houver veículos encontrados, os exibe */}
                             {cars.length > 0 ? (
                                 cars.map((car) => (
-                                    <div className="col-12 col-md-6 mb-4" key={car.id}>
+                                    <div className="col-12 col-md-6 mb-4 " key={car.id}>
                                         <div className="card h-100 text-center">
                                             <div className="card-body">
                                                 <h5 className="card-title">ID: {car.id}</h5>
@@ -129,6 +141,8 @@ const Busca = () => {
                     )}
                 </div>
             </div>
+            </div>
+            </main>
         </>
     );
 };

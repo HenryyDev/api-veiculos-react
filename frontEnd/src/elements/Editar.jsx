@@ -33,6 +33,12 @@ const Editar = () => {
   return (
     <>
       <ToastContainer />
+      <header className=" text-white py-3" style={{ position: "fixed", width: "100vw", top: 0 }}>
+            <h1 className="text-center">Sistema de Gerenciamento de veiculos</h1>
+                <a href="/" className="btn ">Cadastrar</a>
+                <a href="/viewall"  className="btn">Ver Todos os veiculos</a>
+                <a href="/busca" className="btn">Buscar</a>
+            </header>
       <div className="container d-flex justify-content-center align-items-center">
         <div className="row">
           <h3 className="text-center my-2">Edição de veiculo</h3>
@@ -102,8 +108,7 @@ const Editar = () => {
               <button type="submit" className="btn btn-success w-100">
                 Atualizar
               </button>
-              <a href="/viewall" className="btn btn-success w-100 my-2">Visualizar veículos cadastrados</a>
-              <a href="/" className="btn btn-success w-100 ">Cadastrar novo veiculo</a>
+              
             </div>
           </form>
         </div>
