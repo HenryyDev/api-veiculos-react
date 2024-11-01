@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import {Link} from "react-router-dom"
 import "./css/Create.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ToastContainer, toast } from "react-toastify";
@@ -44,13 +44,13 @@ function Create() {
       <ToastContainer />
       <header className=" text-white py-3" style={{ position: "fixed", width: "100vw", top: 0 }}>
               <h1 className="text-center">Sistema de Gerenciamento de veiculos</h1>
-                <a href="/" className="btn ">Cadastrar</a>
-                <a href="/viewall"  className="btn">Ver Todos os veiculos</a>
-                <a href="/busca" className="btn">Buscar</a>
+               <Link to={"/"} className="btn">Cadastrar</Link>
+               <Link to={"/viewall"} className="btn">Ver veiculos cadastrados</Link>
+               <Link to={"/busca"} className="btn">Buscar</Link>
             </header>
 
-      <div className="container d-flex justify-content-center align-items-center" >
-        <div className="row">
+      <div className="container d-flex justify-content-center align-items-center"  >
+        <div className="row" >
           <h3 className="text-center my-2">Cadastro de veiculos</h3>
 
           <form onSubmit={enviar}>

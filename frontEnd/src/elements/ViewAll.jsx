@@ -56,7 +56,7 @@ const ViewAll = () => {
         <div className="row">
           {cars.map((car) => (
             <div className="col-12 col-md-6 mb-4" key={car.id}>
-              <div className="card h-100">
+              <div className="card h-100 mx-4">
                 <div className="card-body">
                   <h5 className="card-title">ID: {car.id}</h5>
                   <p className="card-text">
@@ -81,7 +81,7 @@ const ViewAll = () => {
 }
 else{
   return(
- <div className=" d-flex flex-column justify-content-center" >
+ <div className=" d-flex flex-column justify-content-center align-items-center" >
    <h1>Nenhum veiculo encontrado</h1>
    <a href="/" className="btn btn-success " >cadastrar veiculo</a>
  </div> );
