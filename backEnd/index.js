@@ -58,17 +58,16 @@ app.delete('/remover/:id', function(req,res){
  //view por id
  app.get('/viewid/:id', (req, res) => { //view id
     const { id } = req.params; 
-   conexao.query(`SELECT * FROM veiculos WHERE id=${id}`,(err,result)=>{
+   conexao.query(`SELECT * FROM veiculos WHERE id=?`,[id],(err,result)=>{
     res.send(result);
    })
  });
 
  //buscar por ano 
- app.get('/searchYear', function (req,res){
-    let year=req.body.ano
+ app.get('/viewYear/:ano', function (req,res){
+    const{ano}=req.params
     const query=`SELECT * FROM veiculos WHERE ano=?`;
-    const values=[year]
-    conexao.query(query,values, function(erro,retorno){
+    conexao.query(query,[ano], function(erro,retorno){
         if (erro) throw erro
         res.send(retorno)
     })
@@ -76,10 +75,9 @@ app.delete('/remover/:id', function(req,res){
 
 
 //buscar por cor
- app.get('/searchColor',function(req,res){
-    let cor=req.body.cor
+ app.get('/searchColor/:cor',function(req,res){
     const query=`SELECT * FROM veiculos WHERE cor=?`;
-    const values=[cor]
+    const values=[req.params.cor]
     conexao.query(query,values, function (erro,retorno){
         if (erro) throw erro
         res.send(retorno)

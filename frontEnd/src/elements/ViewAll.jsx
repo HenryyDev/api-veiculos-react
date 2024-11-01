@@ -38,7 +38,7 @@ const ViewAll = () => {
   };
  
 
-    const handleClick= (id)=>{
+    const editar= (id)=>{
        navigate(`editar/${id}`)
     }
     if(cars.length>=1){
@@ -60,7 +60,7 @@ const ViewAll = () => {
                     Dono: {car.proprietario} <br />
                     Cor: {car.cor}
                   </p>
-                  <a href="#" onClick={()=>handleClick(car.id)} className="btn btn-success me-2" >
+                  <a href="#" onClick={()=>editar(car.id)} className="btn btn-success me-2" >
                     Editar
                   </a>
                   <a href="#" className="btn btn-danger" onClick={() => rem(car.id)}>Remover</a>

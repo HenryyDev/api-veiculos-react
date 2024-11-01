@@ -113,6 +113,7 @@ function Create() {
                 Cadastrar
               </button>
               <a href="/viewall" className="btn btn-success w-100 my-2">vizualizar veiculos cadastrados</a>
+              <a href="/busca" className="btn btn-success w-100">Buscar por ano, modelo ou cor</a>
             </div>
           </form>
         </div>
